@@ -8,6 +8,7 @@ export interface Category {
   tiktok: number;
   klaviyo: number;
   others: number;
+  image: string;
 }
 
 export const categories: Category[] = [
@@ -21,6 +22,7 @@ export const categories: Category[] = [
     tiktok: 10.0,
     klaviyo: 5.0,
     others: 5.0,
+    image: "/public/phone-accessories.jpg",
   },
   {
     id: 2,
@@ -32,6 +34,7 @@ export const categories: Category[] = [
     tiktok: 15.0,
     klaviyo: 5.0,
     others: 5.0,
+    image: "/1.jpg",
   },
   {
     id: 3,
@@ -43,6 +46,7 @@ export const categories: Category[] = [
     tiktok: 15.0,
     klaviyo: 5.0,
     others: 5.0,
+    image: "/1.jpg",
   },
   {
     id: 4,
@@ -54,6 +58,7 @@ export const categories: Category[] = [
     tiktok: 10.0,
     klaviyo: 10.0,
     others: 5.0,
+    image: "/1.jpg",
   },
   {
     id: 5,
@@ -65,5 +70,6 @@ export const categories: Category[] = [
     tiktok: 15.0,
     klaviyo: 10.0,
     others: 5.0,
+    image: "/1.jpg",
   },
 ];

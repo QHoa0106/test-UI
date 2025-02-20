@@ -9,6 +9,7 @@ interface TableProps {
 }
 
 const Table = ({ data }: TableProps) => {
+  console.log(data);
   return (
     <div className="table-wrapper">
       <table className="table is-striped is-hoverable is-fullwidth">
@@ -35,13 +36,13 @@ const Table = ({ data }: TableProps) => {
               <td>
                 <div className="flex items-center">
                   <Image
-                    src={`/images/products/${item.id}.jpg`}
+                    src={item.image}
                     alt={item.name}
                     width={50}
                     height={50}
                     className="rounded"
                   />
-                  <div className="ml-3">
+                  <div className="ml-1">
                     <p className="has-text-link">{item.name}</p>
                     <p className="is-size-7 has-text-grey">
                       3D Inflated Effect, Best Seller, Customizable
@@ -57,8 +58,8 @@ const Table = ({ data }: TableProps) => {
               </td>
 
               <td>
-                {"net_revenue" in item
-                  ? ((Number(item.net_revenue) / 410911) * 100).toFixed(2) + "%"
+                {"percent" in item
+                  ? ((Number(item.percent) / 410911) * 100).toFixed(2) + "%"
                   : "N/A"}
               </td>
 
