@@ -17,7 +17,7 @@ const Table = ({ data }: TableProps) => {
           <tr>
             <th>#</th>
             <th>Product Title</th>
-            <th>Net Revenue</th>
+            <th>NetRevenue</th>
             <th>Percent</th>
             <th>Quantity</th>
             <th>Facebook</th>
