@@ -73,10 +73,6 @@ const Filters = ({ onSearch, onFilter, onDateChange }: Filters) => {
             onChange={(e) => handleDateChange(e, "to")}
           />
         </p>
-
-        <p className="control">
-          <button className="button is-primary">Search</button>
-        </p>
       </div>
     </div>
   );

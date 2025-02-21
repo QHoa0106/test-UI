@@ -92,12 +92,39 @@ a {
 }
 
 .table-wrapper {
-  width: 100vw; 
-  max-width: 100%;
-  padding: 0 20px;
+  overflow-x: auto;
+  width: 100%;
 }
 
 .table {
-  width: 100%; 
-  min-width: 1200px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .table-wrapper table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .table-wrapper thead {
+    display: none;
+  }
+
+  .table-wrapper tr {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .table-wrapper td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table-wrapper td::before {
+    content: attr(data-label);
+    font-weight: bold;
+  }
 }

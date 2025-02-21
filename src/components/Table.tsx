@@ -31,9 +31,9 @@ const Table = ({ data }: TableProps) => {
         <tbody>
           {data.map((item, index) => (
             <tr key={item.id}>
-              <td>#{index + 1}</td>
+              <td data-label="#">#{index + 1}</td>
 
-              <td>
+              <td data-label="Product Title">
                 <div className="flex items-center">
                   <Image
                     src={item.image}
@@ -51,31 +51,39 @@ const Table = ({ data }: TableProps) => {
                 </div>
               </td>
 
-              <td className="has-text-weight-bold">
+              <td data-label="Net Revenue" className="has-text-weight-bold">
                 {"net_revenue" in item
                   ? `$${item.net_revenue.toLocaleString()}`
                   : "N/A"}
               </td>
 
-              <td>
+              <td data-label="Percent">
                 {"percent" in item
                   ? ((Number(item.percent) / 410911) * 100).toFixed(2) + "%"
                   : "N/A"}
               </td>
 
-              <td>
+              <td data-label="Quantity">
                 {"quantity" in item ? item.quantity.toLocaleString() : "N/A"}
               </td>
 
-              <td className="has-text-success">{item.facebook}%</td>
+              <td data-label="Facebook" className="has-text-success">
+                {item.facebook}%
+              </td>
 
-              <td className="has-text-info">{item.google}%</td>
+              <td data-label="Google" className="has-text-info">
+                {item.google}%
+              </td>
 
-              <td className="has-text-warning">{item.tiktok}%</td>
+              <td data-label="TikTok" className="has-text-warning">
+                {item.tiktok}%
+              </td>
 
-              <td className="has-text-danger">{item.klaviyo}%</td>
+              <td data-label="Klaviyo" className="has-text-danger">
+                {item.klaviyo}%
+              </td>
 
-              <td>{item.others}%</td>
+              <td data-label="Others">{item.others}%</td>
             </tr>
           ))}
         </tbody>

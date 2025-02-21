@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../../../context/AuthContext";
 import { useRouter } from "next/navigation";
 import Filters from "../../../components/Filters";
@@ -15,6 +15,15 @@ export default function SalesByProducts() {
       router.push("/login");
     }
   }, [user, router]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterType, setFilterType] = useState("all");
+  const [dateRange, setDateRange] = useState({ from: "", to: "" });
+
+  const filteredData = products.filter((products) =>
+    products.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  console.log(filterType);
+  console.log(dateRange);
 
   return (
     <div>
@@ -25,11 +34,11 @@ export default function SalesByProducts() {
         <div className="flex-1 overflow-hidden"></div>
       </div>
       <Filters
-        onSearch={() => {}}
-        onFilter={() => {}}
-        onDateChange={() => {}}
+        onSearch={(value) => setSearchTerm(value)}
+        onFilter={(value) => setFilterType(value)}
+        onDateChange={(range) => setDateRange(range)}
       />
-      <Table data={products} />
+      <Table data={filteredData} />
     </div>
   );
 }
